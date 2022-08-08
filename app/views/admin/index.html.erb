@@ -4,4 +4,6 @@
 
 <div class="mt-4">
     <%= render partial: "article_list_item", collection: @articles, as: :article %>
+
+    <%= link_to "New", new_article_path, class: "rounded px-4 py-2 bg-green-600 hover:bg-green-700 transition flex justify-center items-center text-white font-semibold" %>
 </div>

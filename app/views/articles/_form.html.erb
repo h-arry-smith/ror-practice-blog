@@ -1,0 +1,27 @@
+<%= form_for @article do |f| %>
+    <%= render partial: "shared/errors", locals: { model: @article } %>
+
+    <div class="input-group">
+        <%= f.text_field :title, class: "input-field peer" %>
+        <%= f.label :title, class: "input-label" %>
+    </div>
+
+    <div class="input-group">
+        <%= f.text_field :slug, class: "input-field peer" %>
+        <%= f.label :slug, class: "input-label" %>
+    </div>
+
+    <div class="input-group">
+        <%= f.text_area :description, size: "70x2", class: "input-field peer" %>
+        <%= f.label :description, class: "input-label" %>
+    </div>
+
+    <div class="input-group">
+        <%= f.text_area :body, size: "70x12", class: "input-field peer" %>
+        <%= f.label :body, class: "input-label" %>
+    </div>
+
+    <div class="flex justify-end">
+        <%= f.submit "Save", class: "px-4 py-2 text-lg font-bold text-white bg-green-500 hover:bg-green-600 rounded transition cursor-pointer" %>
+    </div>
+<% end %>

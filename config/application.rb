@@ -18,5 +18,8 @@ module Blog
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Prevent wrappers from forming around input fields
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
   end
 end
