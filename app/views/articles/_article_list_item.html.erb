@@ -1,5 +1,5 @@
 <div>
-    <%= link_to article_path(article) do %>
+    <%= link_to article_path(article.slug) do %>
         <h2 class="text-xl text-slate-800 font-semibold hover:text-blue-600 hover:underline transition"><%= article.title %></h2>
     <% end %>
     <p class="text-slate-600">
