@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+        <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+        <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+        <%= javascript_importmap_tags %>
+    </head>
+
+    <body class="antialiased bg-slate-800 text-white min-h-screen flex flex-col">
+        <header class="p-4 bg-purple-900/50 flex-none">
+            <h1 class="text-purple-500 text-3xl font-extrabold">Admin Panel</h1>
+        </header>
+        <main class="flex flex-1">
+            <div class="bg-slate-900 min-h-full pl-16 pr-8 py-12 whitespace-nowrap">
+                <%= link_to "Article Overview", admin_index_path, class: "font-medium hover:underline transition" %>
+            </div>
+            <div class="w-full p-5">
+                <%= yield %>
+            </div>
+        </main>
+    </body>
+</html>

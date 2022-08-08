@@ -1,0 +1,14 @@
+<div>
+    <h1 class="text-5xl font-extrabold text-slate-900 text-center">
+        <%= @article.title %>
+    </h1>
+    <p class="mt-2 text-slate-600 text-center text-sm mt-6">
+        <%= @article.description %>
+    </p>
+</div>
+
+<hr class="my-4 w-2/3 mx-auto border-slate-200" />
+
+<article class="prose prose-slate prose-lg mx-auto prose-a:text-blue-600 hover:prose-a:underline">
+    <%= @article.body %>
+</article>
