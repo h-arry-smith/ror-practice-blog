@@ -20,6 +20,7 @@
                 <%= link_to "Article Overview", admin_index_path, class: "font-medium hover:underline transition" %>
             </div>
             <div class="w-full p-5">
+                <%= render "shared/flash" %>
                 <%= yield %>
             </div>
         </main>
