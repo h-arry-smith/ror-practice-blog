@@ -1,7 +1,12 @@
-<div>
-    <%= link_to article_path(article.slug) do %>
-        <h2 class="text-xl text-slate-800 font-semibold hover:text-blue-600 hover:underline transition"><%= article.title %></h2>
-    <% end %>
+<div class="my-5 w-full">
+    <div class="flex items-center justify-between w-full">
+        <%= link_to article_path(article.slug) do %>
+            <h2 class="text-xl text-slate-800 font-semibold hover:text-blue-600 hover:underline transition"><%= article.title %></h2>
+        <% end %>
+        <p class="text-xs font-slate-500">
+            <%= article.created_at.to_fs(:long) %>
+        </p>
+    </div>
     <p class="text-slate-600">
         <%= truncate(article.description, length: 150) %>
     </p>

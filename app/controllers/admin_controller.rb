@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
   def index
-    @articles = Article.all
+    @articles = Article.order(created_at: :desc).all
   end
 end
