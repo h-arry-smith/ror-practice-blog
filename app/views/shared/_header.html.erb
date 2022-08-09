@@ -1,0 +1,16 @@
+<header class="flex flex-col items-center p-10 bg-slate-100">
+    <h1 class="text-5xl font-extrabold text-slate-900">Personal Blog</h1>
+    <nav class="mt-4">
+        <ul class="flex space-x-8 text-lg text-slate-700 font-semibold">
+            <li>
+                <%= link_to_unless_current "Home", root_url, class: "font-medium text-slate-500 no-underline hover:text-slate-700 transition" %>
+            </li>
+            <li>
+                <%= link_to_unless_current "About", about_url, class: "font-medium text-slate-500 no-underline hover:text-slate-700 transition" %>
+            </li>
+            <li>
+                <%= link_to_unless_current "Articles", articles_url, class: "font-medium text-slate-500 no-underline hover:text-slate-700 transition" %>
+            </li>
+        </ul>
+    </nav>
+</header>

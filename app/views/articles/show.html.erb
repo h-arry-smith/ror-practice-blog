@@ -8,8 +8,6 @@
 </div>
 
 <div class="mt-4 py-16 bg-white">
-    <article class="prose prose-slate prose mx-auto prose-a:text-blue-600 hover:prose-a:underline">
-        <%= markdown(@article.body) %>
-    </article>
+    <%= render @article %>
 </div>
 
