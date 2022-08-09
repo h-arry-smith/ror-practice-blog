@@ -5,6 +5,10 @@ class Article < ApplicationRecord
 
   has_and_belongs_to_many :tags
 
+  def remove_tag(tag)
+    tags.delete(tag)
+  end
+
   def to_param
     slug
   end

@@ -4,7 +4,7 @@
 
 <p class="uppercase font-semibold ml-4 mt-2">Tags</p>
 <div class="flex space-x-4 my-2">
-    <%= render partial: "admin/tag", collection: @article.tags %>
+    <%= render partial: "admin/tag", collection: @article.tags, locals: {article: @article} %>
 </div>
 
 <%= form_with url: article_tags_path(@article), method: :post do |f| %>

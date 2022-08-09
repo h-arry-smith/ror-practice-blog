@@ -11,6 +11,18 @@ class TagsController < ApplicationController
     end
   end
 
+  def destroy
+    @article = Article.find_by_slug(params[:article_slug])
+    @tag = Tag.find_by_slug(params[:slug])
+
+    @article.remove_tag(@tag)
+    @article.save
+
+    Tag.clean_up_unused_tags
+
+    redirect_to edit_article_path(@article), notice: 'Tag removed!'
+  end
+
   private
 
   def tag_param

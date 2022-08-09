@@ -3,6 +3,16 @@ class Tag < ApplicationRecord
 
   validates :tag, presence: true
 
+  def self.find_by_slug(slug)
+    Tag.find_by(tag: slug)
+  end
+
+  def self.clean_up_unused_tags
+    Tag.all.each do |tag|
+      tag.destroy if tag.articles.empty?
+    end
+  end
+
   def to_s
     tag
   end

@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  get 'tags/create'
   root 'pages#home'
   get 'about', to: 'pages#about'
 
   resources :articles, param: :slug do
-    resources :tags
+    resources :tags, param: :slug, only: %i[create destroy]
   end
 
   get 'admin', to: 'admin#index'

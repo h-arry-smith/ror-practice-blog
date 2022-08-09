@@ -1,2 +1,7 @@
-<p class="ml-4 text-xs lowercase font-semibold bg-slate-700 px-3 py-1 rounded-full"><%= tag %></p>
-
+<div class="ml-4 text-xs lowercase font-semibold bg-slate-700 px-3 py-1 rounded-full flex">
+    <p><%= tag %></p>
+    <% if @article %>
+        <%= button_to "x", article_tag_path(@article, tag), method: :delete,
+        class: "w-4 h-4 ml-4 flex items-center justify-center font-bold rounded-full bg-red-600 hover:bg-red-700" %>
+    <% end %>
+</div>
