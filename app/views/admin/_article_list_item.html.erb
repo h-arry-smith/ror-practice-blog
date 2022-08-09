@@ -5,6 +5,8 @@
             <p class="ml-2 text-sm text-slate-500">
                 <%= time_ago_in_words(article.created_at) %> ago
             </p>
+
+            <%= render partial: "admin/tag", collection: article.tags %>
         </div>
         <p class="mt-2 text-sm"><%= article.description %></p>
     </div>
