@@ -14,8 +14,9 @@
     <body class="antialiased bg-slate-800 text-white min-h-screen flex flex-col">
         <header class="p-4 bg-purple-900/50 flex-none">
             <h1 class="text-purple-500 text-3xl font-extrabold">Admin Panel</h1>
-            <nav>
-                <%= link_to "Article Overview", admin_index_path, class: "font-medium hover:underline transition" %>
+            <nav class="flex space-x-8">
+                <%= link_to "Article Overview", admin_path, class: "font-medium hover:border-purple-500 border-slate-400 border-b transition" %>
+                <%= link_to "Pages", admin_pages_path, class: "font-medium hover:border-purple-500 border-slate-400 border-b transition" %>
             </nav>
         </header>
         <main class="flex flex-1">

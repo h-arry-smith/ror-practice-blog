@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Page.create!(
+  title: 'Home',
+  body: '<p>This is your home page.</p>'
+)
+Page.create!(
+  title: 'About',
+  body: '<p>This is your about page.</p>'
+)

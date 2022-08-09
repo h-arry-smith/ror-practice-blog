@@ -1,0 +1,19 @@
+<div class="border-b border-slate-600 pb-2">
+    <h2 class="text-4xl font-extrabold">
+        Edit Page Contents
+    </h2>
+    <p class="text-sm text-slate-200 mt-1">
+        The contents of the Home Page and the About Page can be customised from this menu.
+    </p>
+</div>
+
+<div class="w-2/3">
+    <% @pages.each do |page| %>
+        <div class="flex items-center space-y-4">
+            <h3 class="text-2xl font-bold"><%= page.title %></h3>
+            <div class="flex-1 border-t mx-4 border-slate-600"></div>
+            <%= link_to "Edit", edit_admin_page_path(page),
+            class: "px-4 py-2 rounded-lg bg-blue-500 hover:bg-blue-600 transiton text-white font-bold"%>
+        </div>
+    <% end %>
+</div>

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'admin/index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root 'pages#home'
+  get 'about', to: 'pages#about'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
   resources :articles, param: :slug
-  resources :admin, only: %i[index]
+
+  get 'admin', to: 'admin#index'
+  namespace :admin do
+    resources :pages, only: %i[index edit update]
+  end
 end

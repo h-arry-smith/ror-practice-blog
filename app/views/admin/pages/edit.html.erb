@@ -1,0 +1,13 @@
+<h2 class="text-4xl font-extrabold border-b border-slate-600 pb-4">
+    Edit <%= @page.title %> Page
+</h2>
+
+<%= form_for [:admin, @page] do |f| %>
+    <div class="bg-slate-100 rounded p-4 m-4 text-slate-900">
+        <%= f.rich_text_area :body, class: "" %>
+    </div>
+
+    <div class="flex justify-end w-full">
+        <%= f.submit "Save", class: "px-4 py-2 rounded bg-green-500 hover:bg-green-600 flex justify-center items-center transition cursor-pointer" %>
+    </div>
+<% end %>
