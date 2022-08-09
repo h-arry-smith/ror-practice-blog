@@ -1,5 +1,12 @@
 <div class="bg-white">
     <div class="py-16 w-max mx-auto">
-        <%= render partial: "article_list_item", collection: @articles, as: :article %>
+        <% @articles.each_key do |year| %>
+            <div class="border-b border-slate-200">
+                <h3 class="font-medium">
+                    <%= year %>
+                </h3>
+            </div>
+            <%= render partial: "article_list_item", collection: @articles[year], as: :article %>
+        <% end %>
     </div>
 </div>

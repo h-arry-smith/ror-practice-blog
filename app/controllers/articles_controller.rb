@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
   before_action :get_article, only: %i[show edit update]
   def index
-    @articles = Article.order(created_at: :desc).all
+    @articles = Article.order(created_at: :desc).all.group_by { |article| article.created_at.year }
   end
 
   def show
