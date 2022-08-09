@@ -16,8 +16,11 @@
         <%= f.label :description, class: "input-label" %>
     </div>
 
-    <div class="input-group">
-        <%= f.text_area :body, size: "70x12", class: "input-field peer" %>
+    <hr class="border-slate-600">
+
+    <div class="input-group flex-col my-4">
+        <%= f.text_area :body, size: "70x30", class: "input-field peer ml-0 my-4",
+        data: {action: 'live-preview#update', :"live-preview-target" => 'edit'} %>
         <%= f.label :body, class: "input-label" %>
     </div>
 
