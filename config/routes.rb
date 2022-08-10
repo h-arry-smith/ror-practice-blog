@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :tags, param: :slug, only: %i[create destroy]
   end
 
+  resources :tags, param: :slug, only: %i[index show]
+
   get 'admin', to: 'admin#index'
   namespace :admin do
     resources :pages, only: %i[index edit update]

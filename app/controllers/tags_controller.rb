@@ -1,4 +1,12 @@
 class TagsController < ApplicationController
+  def index
+    @tags = Tag.all
+  end
+
+  def show
+    @tag = Tag.find_by(tag: params[:slug])
+  end
+
   def create
     @article = Article.find_by_slug(params[:article_slug])
     @tag = Tag.find_or_create_by(tag_param)

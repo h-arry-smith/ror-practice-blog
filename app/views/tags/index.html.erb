@@ -1,0 +1,22 @@
+<div class="w-[60ch] mt-10 mx-auto">
+    <h2 class="text-3xl font-bold text-slate-900">
+        All Tags
+    </h2>
+
+    <hr class="mt-4" />
+
+    <ul class="mt-4 text-lg list-disc">
+        <% @tags.each do |tag| %>
+            <li class="flex mt-2 items-center">
+                <%= link_to tag_path(tag), class: "text-blue-600 font-semibold hover:underline" do %>
+                    <%= tag %>
+                <% end %>
+
+                <span class="px-2 py-1 block leading-none rounded-full bg-slate-200 shadow text-slate-500 ml-4 font-bold flex justify-center items-center text-xs">
+                    <%= tag.articles.count %>
+                </span>
+            </li>
+
+        <% end %>
+    </ul>
+</div>
