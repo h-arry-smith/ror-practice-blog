@@ -1,7 +1,9 @@
 class ArticlesController < ApplicationController
   layout 'admin', only: %i[new edit]
 
+  skip_before_action :authorize, only: %i[index show]
   before_action :get_article, only: %i[show edit update]
+
   def index
     @articles = Article.order(created_at: :desc).all.group_by { |article| article.created_at.year }
   end

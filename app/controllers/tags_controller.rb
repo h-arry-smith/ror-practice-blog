@@ -1,4 +1,6 @@
 class TagsController < ApplicationController
+  skip_before_action :authorize, only: %i[index show]
+
   def index
     @tags = Tag.all
   end
@@ -14,7 +16,7 @@ class TagsController < ApplicationController
     if @article.tags.include? @tag
       redirect_to edit_article_path(@article)
     else
-      @article.tags << @tag 
+      @article.tags << @tag
       redirect_to edit_article_path(@article), notice: 'Tag added!'
     end
   end

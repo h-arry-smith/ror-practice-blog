@@ -13,3 +13,7 @@ Page.create!(
   title: 'About',
   body: '<p>This is your about page.</p>'
 )
+
+SuperUser.create!(
+  password: 'default'
+)

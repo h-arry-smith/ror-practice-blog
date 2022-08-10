@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  skip_before_action :authorize
+
   def home
     @page = Page.find_by(title: "Home")
     @recent = Article.last
