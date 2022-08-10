@@ -1,6 +1,4 @@
-<h2 class="text-4xl font-extrabold border-b border-slate-600 pb-4">
-    All Articles
-</h2>
+<%= render "title", title: "All Articles" %>
 
 <div class="mt-4">
     <%= render partial: "article_list_item", collection: @articles, as: :article %>

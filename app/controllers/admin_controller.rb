@@ -1,17 +1,15 @@
 class AdminController < ApplicationController
   before_action :change_default_password, only: %i[index]
+  before_action :get_super_user, only: %I[change_password update_password]
 
   def index
     @articles = Article.order(created_at: :desc).all
   end
 
   def change_password
-    @user = super_user
   end
 
   def update_password
-    @user = super_user
-
     if @user.update(password_params)
       @user.update(default_password: false)
       redirect_to admin_change_password_url, notice: "Password successfully changed"
@@ -30,5 +28,9 @@ class AdminController < ApplicationController
     if super_user.default_password
       redirect_to admin_change_password_url
     end
+  end
+
+  def get_super_user
+    @user = super_user
   end
 end
